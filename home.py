@@ -34,7 +34,7 @@ def screen_to_game_pos(pos):
 
 
 # --- Colors ---
-BG_COLOR = (245, 245, 250)
+BG_COLOR = (0, 153, 255)
 TILE_COLOR = (107, 202, 120)
 TILE_HOVER_COLOR = (127, 222, 140)
 CARTRIDGE_EMPTY_COLOR = (210, 210, 220)
