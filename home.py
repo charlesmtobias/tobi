@@ -18,8 +18,8 @@ TEXT_COLOR = (30, 30, 40)
 BACK_COLOR = (220, 220, 230)
 BACK_HOVER_COLOR = (200, 200, 215)
 
-font = pygame.font.Font("/assets/fonts/Andika/Andika-Regular.ttf", 28)
-title_font = pygame.font.Font("/assets/fonts/Andika/Andika-Regular.ttf", 36)
+font = pygame.font.Font("assets/fonts/Andika/Andika-Regular.ttf", 28)
+title_font = pygame.font.Font("assets/fonts/Andika/Andika-Regular.ttf", 36)
 
 # --- Content structure ---
 # Each subject is a folder containing a list of activities.
