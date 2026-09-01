@@ -61,11 +61,9 @@ subjects = {
         {"label": "Subtraction", "command": "tuxmath_subtraction"},
         {"label": "Shapes", "command": "shapes_game"},
     ],
-    "Music": [
+    "Art": [
         {"label": "Karaoke", "command": "karaoke"},
         {"label": "Sample Beats", "command": "sampler"},
-    ],
-    "Art": [
         {"label": "Tux Paint", "command": "tuxpaint"},
         {"label": "Color by Number", "command": "color_by_number"},
     ],
@@ -81,7 +79,7 @@ subject_names = list(subjects.keys())
 # --- Grid layout config ---
 # NOTE: all layout math uses GAME_WIDTH/GAME_HEIGHT (the virtual 1024x600 canvas),
 # not SCREEN_WIDTH/SCREEN_HEIGHT (the real monitor) - the scaling step handles the rest.
-COLS = 4
+COLS = 5
 ROWS = 3
 MARGIN = 40
 TILE_GAP = 30
@@ -101,16 +99,12 @@ def get_tile_rect(index, cols=COLS, gap=TILE_GAP, margin=MARGIN, t_width=tile_wi
     return pygame.Rect(x, y, t_width, t_height)
 
 
-
-cartridge_index = len(subject_names)
+cartridge_index = 0
 cartridge_rect = get_tile_rect(cartridge_index)
 
 home_tiles = []
 for i, name in enumerate(subject_names):
-    home_tiles.append({"rect": get_tile_rect(i), "label": name})
-
-def cartridge_inserted():
-    return False
+    home_tiles.append({"rect": get_tile_rect(i + 1), "label": name})
 
 
 current_screen = "home"
