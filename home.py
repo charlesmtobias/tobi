@@ -69,7 +69,7 @@ subjects = {
         {"label": "Tux Paint", "command": "tuxpaint"},
         {"label": "Color by Number", "command": "color_by_number"},
     ],
-    "Reading & Writing": [
+    "Language": [
         {"label": "Story Creator", "command": "story_creator"},
         {"label": "eBooks", "command": "ebooks"},
         {"label": "Encyclopedia", "command": "kiwix"},
@@ -101,13 +101,13 @@ def get_tile_rect(index, cols=COLS, gap=TILE_GAP, margin=MARGIN, t_width=tile_wi
     return pygame.Rect(x, y, t_width, t_height)
 
 
-home_tiles = []
-for i, name in enumerate(subject_names):
-    home_tiles.append({"rect": get_tile_rect(i), "label": name})
 
 cartridge_index = len(subject_names)
 cartridge_rect = get_tile_rect(cartridge_index)
 
+home_tiles = []
+for i, name in enumerate(subject_names):
+    home_tiles.append({"rect": get_tile_rect(i), "label": name})
 
 def cartridge_inserted():
     return False
