@@ -3,11 +3,26 @@ import sys
 
 pygame.init()
 
-# --- Screen setup ---
-SCREEN_WIDTH = 1024
-SCREEN_HEIGHT = 600
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+# --- Virtual "hardware" resolution (matches the real 7" touchscreen) ---
+GAME_WIDTH = 1024
+GAME_HEIGHT = 600
+
+# --- Actual display setup ---
+# On the Pi, this will just be 1024x600 natively (no letterboxing needed).
+# On a dev monitor, this can be the monitor's real resolution for testing letterboxing.
+screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+SCREEN_WIDTH, SCREEN_HEIGHT = screen.get_size()
 pygame.display.set_caption("tobi - Home")
+
+# The game_surface is what all your drawing code targets - never draw to `screen` directly
+game_surface = pygame.Surface((GAME_WIDTH, GAME_HEIGHT))
+
+# --- Compute letterbox scale + position once ---
+scale = min(SCREEN_WIDTH / GAME_WIDTH, SCREEN_HEIGHT / GAME_HEIGHT)
+scaled_width = int(GAME_WIDTH * scale)
+scaled_height = int(GAME_HEIGHT * scale)
+offset_x = (SCREEN_WIDTH - scaled_width) // 2
+offset_y = (SCREEN_HEIGHT - scaled_height) // 2
 
 # --- Colors ---
 BG_COLOR = (245, 245, 250)
@@ -62,8 +77,8 @@ ROWS = 3  # room for 6 subjects + cartridge tile, with space to grow
 MARGIN = 40
 TILE_GAP = 30
 
-grid_width = SCREEN_WIDTH - (2 * MARGIN)
-grid_height = SCREEN_HEIGHT - (2 * MARGIN)
+grid_width = GAME_WIDTH - (2 * MARGIN)
+grid_height = GAME_HEIGHT - (2 * MARGIN)
 
 tile_width = (grid_width - (TILE_GAP * (COLS - 1))) // COLS
 tile_height = (grid_height - (TILE_GAP * (ROWS - 1))) // ROWS
