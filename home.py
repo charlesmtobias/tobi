@@ -109,6 +109,10 @@ for i, name in enumerate(subject_names):
 
 current_screen = "home"
 
+def cartridge_inserted():
+    # Placeholder - real USB detection happens once this runs on the Pi
+    return False
+
 
 def draw_tile(rect, label, color, hovered=False):
     draw_color = TILE_HOVER_COLOR if hovered else color
