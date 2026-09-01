@@ -7,7 +7,7 @@ pygame.init()
 SCREEN_WIDTH = 1024
 SCREEN_HEIGHT = 600
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Kid Computer - Home")
+pygame.display.set_caption("tobi - Home")
 
 # --- Colors ---
 BG_COLOR = (245, 245, 250)
@@ -18,8 +18,8 @@ TEXT_COLOR = (30, 30, 40)
 BACK_COLOR = (220, 220, 230)
 BACK_HOVER_COLOR = (200, 200, 215)
 
-font = pygame.font.SysFont("Arial", 28)
-title_font = pygame.font.SysFont("Arial", 36)
+font = pygame.font.Font("/assets/fonts/Andika/Andika-Regular.ttf", 28)
+title_font = pygame.font.Font("/assets/fonts/Andika/Andika-Regular.ttf", 36)
 
 # --- Content structure ---
 # Each subject is a folder containing a list of activities.
