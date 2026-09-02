@@ -1,0 +1,27 @@
+{
+  "Science": [
+    {"label": "Weather Explorer", "command": "weather_explorer"},
+    {"label": "Animal Facts", "command": "animal_facts"},
+    {"label": "Plant Growth", "command": "plant_growth"}
+  ],
+  "Technology": [
+    {"label": "Typing Practice", "command": "typing_practice"},
+    {"label": "Wiring Diagrams", "command": "wiring_diagrams"}
+  ],
+  "Math": [
+    {"label": "Addition", "command": "tuxmath_addition"},
+    {"label": "Subtraction", "command": "tuxmath_subtraction"},
+    {"label": "Shapes", "command": "shapes_game"}
+  ],
+  "Art": [
+    {"label": "Karaoke", "command": "karaoke"},
+    {"label": "Sample Beats", "command": "sampler"},
+    {"label": "Tux Paint", "command": "tuxpaint"},
+    {"label": "Color by Number", "command": "color_by_number"}
+  ],
+  "Language": [
+    {"label": "Story Creator", "command": "story_creator"},
+    {"label": "eBooks", "command": "ebooks"},
+    {"label": "Encyclopedia", "command": "kiwix"}
+  ]
+}
